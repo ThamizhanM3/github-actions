@@ -1,14 +1,16 @@
 name: pipeline-01
+
 on:
-	push:
+  push:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-			- name: Checkout
-				uses: actions/checkout@v4
-				
-			- name: Print infor
-				run: echo "CI Triggered"
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Print info
+        run: echo "CI Triggered"
