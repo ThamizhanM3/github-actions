@@ -1,0 +1,13 @@
+name: pipeline-03
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job01:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Branch Info
+        run: echo "Main branch only"
