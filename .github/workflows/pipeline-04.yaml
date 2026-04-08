@@ -1,0 +1,13 @@
+name: pipeline-04
+
+on:
+  push:
+    paths:
+      - src/**
+
+jobs:
+  srcpush:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Src Push
+        run: echo "Triggered for src"
