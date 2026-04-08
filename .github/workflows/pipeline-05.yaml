@@ -1,0 +1,21 @@
+name: pipeline-05
+
+on: push
+
+jobs:
+  node:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Node Setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      
+      - name: Install
+        run: npm install
+        
+      - name: Run Tests
+        run: npm test
