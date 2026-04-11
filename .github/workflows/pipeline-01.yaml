@@ -1,4 +1,4 @@
-name: pipeline-01
+name: pipeline-01-Basic-CI
 
 on:
   push:

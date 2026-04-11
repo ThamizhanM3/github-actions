@@ -1,4 +1,4 @@
-name: pipeline-08
+name: pipeline-08-Multi-Jobs
 
 on: push
 

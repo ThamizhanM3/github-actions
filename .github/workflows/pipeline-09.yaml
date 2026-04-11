@@ -1,0 +1,12 @@
+name: pipeline-09-Env
+
+on: push
+
+jobs:
+  env:
+    runs-on: ubuntu-latest
+    env:
+      APP: demo
+    steps:
+      - name: Print ENV
+        run: echo $APP

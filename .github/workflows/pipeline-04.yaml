@@ -1,4 +1,4 @@
-name: pipeline-04
+name: pipeline-04-Path-Filater
 
 on:
   push:
