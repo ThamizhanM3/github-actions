@@ -1,0 +1,19 @@
+name: pipeline-06
+
+on: push
+
+jobs:
+  java:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Java Setup
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Run Java App
+        run: mvn clean install
