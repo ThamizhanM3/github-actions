@@ -1,0 +1,10 @@
+name: pipeline-10-Secrets
+
+on: push
+
+jobs:
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Secret
+        run: echo "${{ secrets.API_key }}"
