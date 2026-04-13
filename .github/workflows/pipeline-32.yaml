@@ -1,0 +1,43 @@
+name: pipeline-32-Path
+
+on:
+  push:
+    paths:
+      - service-a/**
+      - service-b/**
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      service-a-changed: ${{ steps.check-changes.outputs.service-a-changed }}
+      service-b-changed: ${{ steps.check-changes.outputs.service-b-changed }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Path filter
+        uses: dorny/paths-filter@v3
+        id: check-changes
+        with:
+          filters: |
+            service-a:
+              - 'service-a/**'
+            service-b:
+              - 'service-b/**'
+
+  service-a:
+    needs: changes
+    if: needs.changes.outputs.service-a-changed == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Service A
+        run: echo "Building Service A..."
+
+  service-b:
+    needs: changes
+    if: needs.changes.outputs.service-b-changed == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Service B
+        run: echo "Building Service B..."
