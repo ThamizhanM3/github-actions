@@ -21,9 +21,9 @@ jobs:
         id: check-changes
         with:
           filters: |
-            service-a:
+            service-a-changed:
               - 'service-a/**'
-            service-b:
+            service-b-changed:
               - 'service-b/**'
 
   service-a:
