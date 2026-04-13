@@ -1,0 +1,22 @@
+name: pipeline-31-Branch
+
+on:
+  push:
+    branches:
+      - main
+      - test/branch1
+
+jobs:
+  main:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Main Branch
+        run: echo "Building Main Branch..."
+
+  branch1:
+    if: github.ref == 'refs/heads/test/branch1'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Test Branch 1
+        run: echo "Building Test Branch 1..."
