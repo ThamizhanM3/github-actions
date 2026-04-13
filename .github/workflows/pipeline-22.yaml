@@ -1,0 +1,20 @@
+name: pipeline-22-Microservices
+
+on:
+  push:
+    paths:
+      - service-a/**
+      - service-b/**
+
+jobs:
+  service-a:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Service A
+        run: echo "Building Service A..."
+  
+  service-b:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Service B
+        run: echo "Building Service B..."
